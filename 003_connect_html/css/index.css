@@ -8,8 +8,16 @@ body {
     height: 100%;
   }
   
-  h1 {
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+h1 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
   
+#RipVanWinkle {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  background-color: SlateBlue;
+  color: Yellow;
+}
