@@ -26,7 +26,7 @@ class Player extends User {
   });
 
   void walk() {
-    print("user $name walk");
+    print("user player $name walk");
   }
 
   void showInfo() {
@@ -42,5 +42,11 @@ class Coach extends User {
 
 void main() {
   print("start abstract class");
+
+  var player01 = Player(name: "faker", level: Level.gosu, team: Team.black);
+  player01.walk();
+  var coach01 = Coach();
+  coach01.walk();
+
   print("end abstract class");
 }
