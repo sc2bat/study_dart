@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toonapp/button_01.dart';
 
 const taxAmount = 15;
 const priceAmount = 30;
@@ -10,19 +11,19 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         // backgroundColor: Colors.black26,
-        backgroundColor: const Color(0xFF181818),
+        backgroundColor: Color(0xFF181818),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 50,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Column(
@@ -48,10 +49,10 @@ class App extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 120,
               ),
-              const Center(
+              Center(
                 child: Text(
                   "Total Value",
                   style: TextStyle(
@@ -60,10 +61,10 @@ class App extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 6,
               ),
-              const Text(
+              Text(
                 "\$ 3 939 393 939",
                 style: TextStyle(
                   fontSize: 30,
@@ -71,31 +72,20 @@ class App extends StatelessWidget {
                   color: Colors.white70,
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: 50,
-                      ),
-                      child: Text(
-                        "Transfer",
-                        style: TextStyle(
-                          fontSize: 22,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const MyButton(),
+                  Button(
+                      inputTxt: "Transfer",
+                      bgColor: Colors.amber,
+                      txtColor: Colors.black),
+                  Button(
+                      inputTxt: "Request",
+                      bgColor: Colors.black54,
+                      txtColor: Colors.white70),
                 ],
               ),
             ],
