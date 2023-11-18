@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonapp/widgets/button_01.dart';
+import 'package:toonapp/widgets/currency_card.dart';
 
 const taxAmount = 15;
 const priceAmount = 30;
@@ -115,68 +116,26 @@ class App extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  color: Colors.black54,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(26),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Euro",
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "3 293",
-                                style: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "EUR",
-                                style: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Transform.scale(
-                        scale: 2.4,
-                        child: Transform.translate(
-                          offset: const Offset(-6, 10),
-                          child: const Icon(
-                            Icons.euro_rounded,
-                            color: Colors.white,
-                            size: 90,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              const CurrencyCard(
+                cardName: "Euro",
+                cardCode: "EUR",
+                cardAmount: "3 848",
+                cardIcon: Icons.euro_symbol_rounded,
+                cardColor: Colors.black,
+              ),
+              const CurrencyCard(
+                cardName: "Euro",
+                cardCode: "EUR",
+                cardAmount: "6 328",
+                cardIcon: Icons.euro_symbol_rounded,
+                cardColor: Colors.orange,
+              ),
+              const CurrencyCard(
+                cardName: "Euro",
+                cardCode: "EUR",
+                cardAmount: "1 223",
+                cardIcon: Icons.euro_symbol_rounded,
+                cardColor: Colors.purpleAccent,
               ),
               const SizedBox(
                 height: 10,

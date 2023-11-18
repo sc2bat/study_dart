@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toonapp/button_01.dart';
+import 'package:toonapp/widgets/button_01.dart';
 
 const taxAmount = 15;
 const priceAmount = 30;
