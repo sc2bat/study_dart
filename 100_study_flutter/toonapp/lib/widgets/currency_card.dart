@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CurrencyCard extends StatelessWidget {
   final String cardName, cardCode, cardAmount;
   final IconData cardIcon;
-  final Color cardColor;
+  final bool cardIsInverte;
 
   const CurrencyCard(
       {super.key,
@@ -11,14 +11,15 @@ class CurrencyCard extends StatelessWidget {
       required this.cardCode,
       required this.cardAmount,
       required this.cardIcon,
-      required this.cardColor});
+      // required this.cardColor,
+      required this.cardIsInverte});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        color: cardColor,
+        color: cardIsInverte ? Colors.black : Colors.white70,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
@@ -31,8 +32,8 @@ class CurrencyCard extends StatelessWidget {
               children: [
                 Text(
                   cardName,
-                  style: const TextStyle(
-                    color: Colors.white70,
+                  style: TextStyle(
+                    color: cardIsInverte ? Colors.white70 : Colors.black,
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
@@ -44,8 +45,8 @@ class CurrencyCard extends StatelessWidget {
                   children: [
                     Text(
                       cardAmount,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: cardIsInverte ? Colors.white70 : Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -54,8 +55,8 @@ class CurrencyCard extends StatelessWidget {
                     ),
                     Text(
                       cardCode,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: cardIsInverte ? Colors.white70 : Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -69,7 +70,7 @@ class CurrencyCard extends StatelessWidget {
                 offset: const Offset(-6, 10),
                 child: Icon(
                   cardIcon,
-                  color: Colors.white,
+                  color: cardIsInverte ? Colors.white70 : Colors.black,
                   size: 90,
                 ),
               ),

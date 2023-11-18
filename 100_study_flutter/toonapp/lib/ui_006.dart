@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toonapp/widgets/button_01.dart';
-import 'package:toonapp/widgets/currency_card.dart';
+import 'package:toonapp/widgets/currency_card_02.dart';
 
 const taxAmount = 15;
 const priceAmount = 30;
@@ -117,32 +117,29 @@ class App extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const CurrencyCard(
+                const CurrencyCardAddTrans(
                   cardName: "Euro",
                   cardCode: "EUR",
                   cardAmount: "3 848",
                   cardIcon: Icons.euro_symbol_rounded,
                   cardIsInverte: true,
+                  cardTransform: 0,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -20),
-                  child: const CurrencyCard(
-                    cardName: "Dollar",
-                    cardCode: "USD",
-                    cardAmount: "6 328",
-                    cardIcon: Icons.attach_money,
-                    cardIsInverte: false,
-                  ),
+                const CurrencyCardAddTrans(
+                  cardName: "Dollar",
+                  cardCode: "USD",
+                  cardAmount: "6 328",
+                  cardIcon: Icons.attach_money,
+                  cardIsInverte: false,
+                  cardTransform: 1,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -40),
-                  child: const CurrencyCard(
-                    cardName: "Bitcoin",
-                    cardCode: "BTC",
-                    cardAmount: "1 223",
-                    cardIcon: Icons.currency_bitcoin_rounded,
-                    cardIsInverte: true,
-                  ),
+                const CurrencyCardAddTrans(
+                  cardName: "Bitcoin",
+                  cardCode: "BTC",
+                  cardAmount: "1 223",
+                  cardIcon: Icons.currency_bitcoin_rounded,
+                  cardIsInverte: true,
+                  cardTransform: 2,
                 ),
                 const SizedBox(
                   height: 10,
