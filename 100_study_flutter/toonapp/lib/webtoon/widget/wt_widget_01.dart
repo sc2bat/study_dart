@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:toonapp/webtoon/screens/wt_detail_screen_01.dart';
 import 'package:toonapp/webtoon/screens/wt_detail_screen_02.dart';
+import 'package:toonapp/webtoon/screens/wt_detail_screen_03.dart';
 
 var log = Logger();
 
@@ -22,7 +23,7 @@ class WebtoonWidget01 extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailScreen02(
+            builder: (context) => DetailScreen03(
               title: title,
               thumb: thumb,
               id: id,
