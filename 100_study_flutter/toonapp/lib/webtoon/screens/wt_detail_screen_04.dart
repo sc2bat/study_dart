@@ -4,10 +4,10 @@ import 'package:toonapp/webtoon/widget/wt_episode_widget_01.dart';
 import 'package:toonapp/webtoon/wt_models/wt_webtoon_detail_model.dart';
 import 'package:toonapp/webtoon/wt_models/wt_webtoon_episode_model_01.dart';
 
-class DetailScreen03 extends StatefulWidget {
+class DetailScreen04 extends StatefulWidget {
   final String title, thumb, id;
 
-  const DetailScreen03({
+  const DetailScreen04({
     super.key,
     required this.title,
     required this.thumb,
@@ -15,10 +15,10 @@ class DetailScreen03 extends StatefulWidget {
   });
 
   @override
-  State<DetailScreen03> createState() => _DetailScreen03State();
+  State<DetailScreen04> createState() => _DetailScreen04State();
 }
 
-class _DetailScreen03State extends State<DetailScreen03> {
+class _DetailScreen04State extends State<DetailScreen04> {
   late Future<WebtoonDetailModel01> webtoon;
   late Future<List<WebtoonEpisodeModel01>> webtoonEpisodes;
 
@@ -34,10 +34,17 @@ class _DetailScreen03State extends State<DetailScreen03> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        toolbarHeight: 150,
         centerTitle: true,
         elevation: 5,
         backgroundColor: Colors.white70,
         foregroundColor: Colors.blueAccent,
+        actions: const [
+          IconButton(
+            onPressed: null,
+            icon: Icon(Icons.favorite_border_outlined),
+          ),
+        ],
         title: Text(
           widget.title,
           style: const TextStyle(
