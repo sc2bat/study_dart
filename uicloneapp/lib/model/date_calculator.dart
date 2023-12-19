@@ -27,4 +27,31 @@ class DateCalculator {
         return 'NONE';
     }
   }
+
+  List<int> getDaysList() {
+    int year = _dateTime.year;
+    int month = _dateTime.month;
+    int day = _dateTime.day;
+
+    if (month < 1 || month > 12) {
+      throw ArgumentError(
+          'Invalid month: $month. Month should be between 1 and 12.');
+    }
+
+    DateTime firstDayOfNextMonth = DateTime(year, month + 1, 1);
+    DateTime lastDayOfMonth =
+        firstDayOfNextMonth.subtract(const Duration(days: 1));
+
+    int daysInMonth = lastDayOfMonth.day;
+
+    List<int> daysList = List.generate(daysInMonth, (index) => index + 1);
+
+    if (day <= daysInMonth) {
+      daysList = daysList.sublist(day - 1);
+    } else {
+      daysList = [];
+    }
+
+    return daysList;
+  }
 }
