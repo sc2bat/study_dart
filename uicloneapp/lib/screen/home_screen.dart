@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     log.d('start home screen build');
     final dateCal = DateCalculator();
+    log.d(dateCal.getDaysList());
 
     return Scaffold(
       backgroundColor: Colors.black38,
@@ -100,7 +101,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: SizedBox(
-                    height: 800, // 높이를 적절히 지정
+                    height: 350, // 높이를 적절히 지정
                     child: makeCard(),
                   ),
                 ),
@@ -274,31 +275,30 @@ class HomeScreen extends StatelessWidget {
                   Text(
                     card['title'].toString().toUpperCase(),
                     style: const TextStyle(
-                      fontSize: 54,
+                      fontSize: 50,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     card['content'].toString().toUpperCase(),
                     style: const TextStyle(
-                      fontSize: 54,
+                      fontSize: 50,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 16),
                   // 참석자들을 Wrap으로 가로로 출력
                   Wrap(
-                    spacing: 8, // 각 참석자 간의 간격
-                    runSpacing: 8, // 각 라인 간의 간격
+                    runSpacing: 6, // 각 라인 간의 간격
                     children: [
                       for (int i = 0; i < card['participand'].length; i++)
                         Container(
                           padding: const EdgeInsets.all(8),
                           child: Text(
-                            i < 4
+                            i < 3
                                 ? card['participand'][i]
-                                : (i == 4
-                                    ? '+${card['participand'].length - 4}'
+                                : (i == 3
+                                    ? '+${card['participand'].length - 3}'
                                     : ''),
                             style: TextStyle(
                               fontSize: 16,
@@ -312,6 +312,9 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                      const SizedBox(
+                        width: 6,
+                      ),
                     ],
                   ),
                 ],
